@@ -1,0 +1,10 @@
+.fillmax{
+  width: 100%;
+
+}
+
+.bubblecard{
+  border: .5vw;
+  border-radius: .5vw;
+  width: 100%
+}

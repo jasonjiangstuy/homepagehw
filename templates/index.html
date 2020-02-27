@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}" type="text/css">
+    <link rel="shortcut icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='imgs/favicon-32x32.png') }}">
+  </head>
+
+  <body> 
+    
+    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+    {% include 'navbar.html' %}
+
+    <div id='main-image'>
+    </div>
+
+    
+
+    <div id="maindiv">
+      <h1>Gallery</h1>
+      <p> This is some text </p>
+
+<br/>
+      <h1> Our Mission </h1>
+      <p> This is some text </p>
+
+<br/>
+<hr>
+      <p> @STUY TECH NUCLEAR INC. all rights reserved</p>
+      <hr>
+      
+    </div>
+  </body>
+</html>

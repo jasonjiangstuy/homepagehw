@@ -1,0 +1,40 @@
+ <div class="navbar">
+      <table>
+        <tr>
+          <td class = "margin-left">
+            <h1 class="hamburger" onclick="togglehamburger()">
+              &#9776;
+            </h1>
+          </td>
+            
+          <td class = "body">
+            <div>
+            <a href="/">
+            <img id = "logo" src="{{ url_for('static', filename='imgs/logo.png') }}"
+            </a>
+            </div>
+          </td>
+          
+          <td class = "margin-right">
+            <a href="/contactus"><h1>
+              Contact Us
+            </a>
+          </td>
+
+        </tr>
+        
+      </table> 
+      
+    </div>
+    <div class="menuitems">
+      <ul>
+        <li>Home</li>
+        <li>Games</li>
+        <li>Club</li>
+        <li>Blog</li>
+        <li>Sponsor</li>
+        <li>Nuclear Energy</li>
+        <li><a href='/ourteam'>Our Team</a></li>
+        
+        </ul>
+    </div>
