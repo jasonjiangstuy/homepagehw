@@ -4,24 +4,27 @@
     <meta charset="utf-8">
     <title>Home Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}" type="text/css">
-    <link rel="shortcut icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='imgs/favicon-32x32.png') }}">
+    {% include 'formating.html' %}
+    
   </head>
 
-  <body> 
-    
-    <script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+  <body>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
 
-    {% include 'navbar.html' %}
 
     <div id='main-image'>
+
+      <a href="#jumpmain">
+      <img src="{{ url_for('static', filename='imgs/arrow.png') }}" id="bouncing_arrow"/>
+      </a>
     </div>
+    {% include 'navbar.html' %}
+
 
     
 
     <div id="maindiv">
-      <h1>Gallery</h1>
+      <h1 id="jumpmain">Who am I?</h1>
       <p> This is some text </p>
 
 <br/>

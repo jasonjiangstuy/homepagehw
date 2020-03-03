@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{ i[0] }}</title>
+    {% include 'formating.html' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/standard.css') }}", type="text/css">
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+
+    <div id="maindiv">
+      <!-- title -->
+      <center><h1>{{ i[0] }}</h1></center>
+    
+    <!-- description of the page -->
+      <div id="page-description">
+        <p>{{ i[1] }}</p>
+      </div>
+
+    <!-- elements on the page -->
+      {% for item in i[2] %}
+        <div id="element-heading">
+          <p> {{item[0]}} </p>
+        </div>
+        <div id="element-description">
+          <p> {{item[1]}} </p>
+        </div>
+        <img id="element-img" src="{{item[2]}}"/>
+
+      {% endfor %}
+    </div>
+  </body>
+
+</html>

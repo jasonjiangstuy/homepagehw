@@ -1,7 +1,8 @@
 from flask import Flask, render_template, session
 from flask_debug import Debug
+import details
 app = Flask(__name__, static_folder='./static', template_folder='./templates')
-
+#print(details.citation)
 #setting cache to null
 app.config['CACHE_TYPE'] = 'null'
 
@@ -13,23 +14,25 @@ def home():
     'index.html'
   )
 
-@app.route('/ourteam', methods=['GET'])
+@app.route('/myteam', methods=['GET'])
 def team():
   return render_template(
     'teampage.html'
   )
 
-@app.route('/wheremyenergy', methods=['GET'])
-def energy():
-  return render_template(
-    'wheresmyenergy.html'
-  )
-
-@app.route('/contactus', methods=['GET'])
+@app.route('/contactme', methods=['GET'])
 def contact():
   return render_template(
-    'contactus.html'
+    'contactme.html'
   )
+
+@app.route('/citations', methods=['GET'])
+def cite():
+  return render_template(
+    #global citation
+    "standard.html", i=details.citation
+  )
+
 
 #adding header to disable caching -- REMOVE WHEN DEPLOYING SITE
 @app.after_request
