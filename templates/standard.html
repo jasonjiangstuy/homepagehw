@@ -11,20 +11,22 @@
 
     <div id="maindiv">
       <!-- title -->
-      <center><h1>{{ i[0] }}</h1></center>
-    
+      <center><h1>{{ i[0]|safe }}</h1></center>
+      <!-- Thank you to https://stackoverflow.com/questions/3206344/passing-html-to-template-using-flask-jinja2
+    for showing me how to stop jinja from encoding the html tags-->
+
     <!-- description of the page -->
       <div id="page-description">
-        <p>{{ i[1] }}</p>
+        <p>{{ i[1]|safe }}</p>
       </div>
 
     <!-- elements on the page -->
       {% for item in i[2] %}
         <div id="element-heading">
-          <p> {{item[0]}} </p>
+          <p> {{item[0]|safe}} </p>
         </div>
         <div id="element-description">
-          <p> {{item[1]}} </p>
+          <p> {{item[1]|safe}} </p>
         </div>
         <img id="element-img" src="{{item[2]}}"/>
 
