@@ -5,13 +5,14 @@ html, body{
 }
 
 #main-image{
-  width: 100%;
+  width: 100vw;
   height:100vh;
-  background-color:aqua;
+  background-color:white;
   background-image:url('/static/imgs/background_nuclear_plant.png');
-  background-repeat:no-repeat; 
+  background-repeat:no-repeat;
+  background-origin: border-box;
   background-position: center center;
-  background-size:cover;
+  background-size:contain;
 }
 
 @keyframes bounce{

@@ -1,5 +1,4 @@
-from flask import Flask, render_template, session
-from flask_debug import Debug
+from flask import Flask, render_template, session, request
 import details
 app = Flask(__name__, static_folder='./static', template_folder='./templates')
 #print(details.citation)
@@ -10,6 +9,11 @@ app.config.update(TEMPLATES_AUTO_RELOAD=True)
 
 @app.route('/', methods=['GET'])
 def home():
+  if request.args.get('walkthrough') == 'True':
+    print('starting walkthrough')
+    return render_template(
+    'index.html', walkthrough=True
+    )
   return render_template(
     'index.html'
   )

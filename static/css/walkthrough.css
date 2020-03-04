@@ -1,0 +1,9 @@
+#display-screen{
+  background-color: black;
+  opacity: .85;
+  width: inherit;
+  height: inherit;
+  scroll-behavior:
+  position: absolute;
+
+}

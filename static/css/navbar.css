@@ -9,7 +9,7 @@
 }
 
 @keyframes slide{
-  
+
 }
 .menuitems.menuon{ /* turns the nav bar on// when the ham is pressed*/
   position: absolute;
@@ -20,10 +20,10 @@
 
 .menuitems{
   display: none;
-  
+
 }
 
-.menuitems ul li{
+.menuparts{
   list-style-type:none;
   padding:1em;
 }
@@ -59,4 +59,8 @@
   height: 10vh;
   position: -webkit-sticky;
   position: sticky;
+}
+
+html{
+  scroll-behavior: smooth;
 }

@@ -5,37 +5,54 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}" type="text/css">
     {% include 'formating.html' %}
-    
+
   </head>
 
   <body>
-    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+    <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic1.png') }}">
+    <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic2.png') }}">
+    <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic3.png') }}">
+    <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic4.png') }}">
+    <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic5.png') }}">
+    <script async src="{{ url_for('static', filename='js/index.js') }}"></script>
+
 
 
     <div id='main-image'>
+      {% if walkthrough %}
+        {% include 'walkthrough.html' %}
+      {% endif %}
 
       <a href="#jumpmain">
+
       <img src="{{ url_for('static', filename='imgs/arrow.png') }}" id="bouncing_arrow"/>
       </a>
     </div>
     {% include 'navbar.html' %}
 
 
-    
-
     <div id="maindiv">
+      <p>* note pop-up windows blocker must be disabled for the best experience *</p>
       <h1 id="jumpmain">Who am I?</h1>
-      <p> This is some text </p>
+      <p> My name is Jason Jiang, Highschool Sophmore at Stuyvesant Highschool </p>
+      <p>A stressed overworked being, Its nice to meet you!!!</p>
+      <h3>Some quick facts</h3>
+      <ul>
+        <li> My favorite food is ice cream </li>
+        <li> I love to dance, but can't dance (for those that saw me during hip hop auditions im sorry) </li>
+        <li> I am a freak at a buffet, I WILL get my money's worth. A humble food vacuum at your service. </li>
+      </ul>
+      <h3>Now come take a look around my website and learn about who I am</h3>
+      <br/>
+      <h2>However... if you would prefer, I'll walk you through it :)))</h2>
+      <!-- button to start walk through-->
 
 <br/>
-      <h1> Our Mission </h1>
-      <p> This is some text </p>
-
+<a href="/?walkthrough=True&sequence=1#">
+ <button id="walkthroughButton">Start Walkthrough</button>
+</a>
 <br/>
 <hr>
-      <p> @STUY TECH NUCLEAR INC. all rights reserved</p>
-      <hr>
-      
     </div>
   </body>
 </html>
