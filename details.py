@@ -38,7 +38,15 @@ projects = [
 ]
 
 contactme = [
+    "Contact Me",
+    "Feal free to contact me via email or leave a review about the site"
   [
+    ["Email:", "be a good sport and not spam me :) <br/> <a href='mailto:jjiang20@stuy.edu?subject=About%20Me%20Website'> jjiang20@stuy.edu</a>", "img."],
+    ["Leave a review!!:",
+    ],
+    ["Previous Reviews:",
+
+    ]
 
   ]
 

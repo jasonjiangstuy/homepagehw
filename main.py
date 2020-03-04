@@ -27,7 +27,7 @@ def team():
 @app.route('/contactme', methods=['GET'])
 def contact():
   return render_template(
-    'contactme.html'
+    'standard.html', i=details.contactme
   )
 
 @app.route('/citations', methods=['GET'])
