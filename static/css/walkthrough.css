@@ -3,7 +3,7 @@
   opacity: .85;
   width: inherit;
   height: inherit;
-  scroll-behavior:
+  scroll-behavior: no;
   position: absolute;
 
 }

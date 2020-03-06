@@ -32,7 +32,8 @@
   width: 70vw;
   margin-left: 15vw;
   margin-right: 15vw;
-  margin-bottom: 15vh
+  margin-bottom: 15vh;
+  display: block;
 }
 
 .margin-left, .margin-right{

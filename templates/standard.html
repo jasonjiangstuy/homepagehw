@@ -13,15 +13,24 @@
       <!-- title -->
       <center><h1>{{ i[0]|safe }}</h1></center>
       <!-- Thank you to https://stackoverflow.com/questions/3206344/passing-html-to-template-using-flask-jinja2
-    for showing me how to stop jinja from encoding the html tags-->
+      for showing me how to stop jinja from encoding the html tags-->
 
-    <!-- description of the page -->
+      <!-- description of the page -->
       <div id="page-description">
         <p>{{ i[1]|safe }}</p>
       </div>
+      {% if submit %}
+      <h3> Review Submitted </h3>
+      {% else %}
+      <h3> Please Fill in the Required Forms </h3>
+      {% endif %}
 
-    <!-- elements on the page -->
-      {% for item in i[2] %}
+      {% if contactme %}
+      {% include 'reviewform.html' %}
+      {% endif %}
+    
+      <!-- elements on the page -->
+        {% for item in i[2] %}
         <div id="element-heading">
           <p> {{item[0]|safe}} </p>
         </div>
@@ -30,7 +39,7 @@
         </div>
         <img id="element-img" src="{{item[2]}}"/>
 
-      {% endfor %}
+        {% endfor %}
     </div>
   </body>
 

@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/reviewform.css') }}" type="text/css">
+
+<form action="/contactme" enctype=multipart/form-data method="POST">
+  <div class="textbox">
+  **Items marked with "*" are mandatory**
+  <br/>
+
+  *What is your name: &nbsp
+  <input autocomplete="off" type="text" placeholder="YOUR NAME" name="name">
+  </input>
+  <br/>
+  Write your comment: &nbsp
+  <input autocomplete="off" type="text" placeholder="YOUR COMMENT" name="comment">
+  </input>
+  <br/>
+  *Rate the site: &nbsp
+  <input autocomplete="off" type="range" step="0.25" min="0" max="5" name="rating">
+  </input>*
+  <br/>
+  Submit a picture with your review: &nbsp
+  <br/>
+  <input type="file" name="img" accept="image/*" ></input>
+  </div>
+  <input type="submit"></input>
+</form>
