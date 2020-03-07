@@ -21,8 +21,9 @@
       </div>
       {% if submit %}
       <h3> Review Submitted </h3>
-      {% else %}
-      <h3> Please Fill in the Required Forms </h3>
+      {% endif %}
+      {% if submit==False %}
+      <h3> Sorry, request not furfilled, Please Fill in the Required Forms or Submit only a img type file of </h3>
       {% endif %}
 
       {% if contactme %}
@@ -40,7 +41,33 @@
         <img id="element-img" src="{{item[2]}}"/>
 
         {% endfor %}
-    </div>
+
+        <div id='reviewsbox'>
+          <div id="element-heading">
+            <p> Previous Reviews: </p>
+          </div>
+          <div id="element-description">
+            <p> Average Rating: {{averagescore}} </p>
+          </div>
+
+        {% for item in u %}
+          <div id="reviewer-name">
+            <p> {{item[0]|safe}} </p>
+          </div>
+          <div id="reviewer-description">
+            <p> {{item[1]|safe}} </p>
+          </div>
+          <div id="reviewer-rating">
+            <p> {{item[2]|safe}} </p>
+          </div>
+          <img id="reviewer-img" src="{{item[3]}}"/>
+
+        {% endfor %}
+        </div>
+
+
+
+      </div>
   </body>
 
 </html>
