@@ -3,7 +3,9 @@
   opacity: .85;
   width: inherit;
   height: inherit;
-  scroll-behavior: no;
   position: absolute;
 
+}
+html{
+  overflow-y: hidden;
 }

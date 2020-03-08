@@ -22,10 +22,10 @@ def home():
   if request.args.get('walkthrough') == 'True':
     print('starting walkthrough')
     return render_template(
-    'index.html', walkthrough=True
+    'index.html', walkthrough='True', myTrue="True"
     )
   return render_template(
-    'index.html'
+    'index.html', walkthrough='False', myTrue="True"
   )
 
 @app.route('/myteam', methods=['GET'])

@@ -14,16 +14,17 @@
     <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic3.png') }}">
     <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic4.png') }}">
     <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic5.png') }}">
+
     <script async src="{{ url_for('static', filename='js/index.js') }}"></script>
 
 
 
     <div id='main-image'>
-      {% if walkthrough %}
+      {% if walkthrough == myTrue %}
         {% include 'walkthrough.html' %}
       {% endif %}
 
-      <a href="#jumpmain">
+      <a {% if walkthrough != myTrue %} href="#jumpmain" {% endif %}>
 
       <img src="{{ url_for('static', filename='imgs/arrow.png') }}" id="bouncing_arrow"/>
       </a>
