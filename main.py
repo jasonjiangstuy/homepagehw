@@ -22,10 +22,10 @@ def home():
   if request.args.get('walkthrough') == 'True':
     print('starting walkthrough')
     return render_template(
-    'index.html', walkthrough='True', myTrue="True"
+    'index.html', walkthrough=1
     )
   return render_template(
-    'index.html', walkthrough='False', myTrue="True"
+    'index.html', walkthrough=0
   )
 
 @app.route('/myteam', methods=['GET'])
@@ -44,7 +44,7 @@ def myImgpaths(): #done
   finalpaths = []
   countup = 1
   for entry in os.scandir(app.config['UPLOAD_FOLDER']):
-    if entry.is_file():
+    if entry.is_file() and not entry.name.startswith(".") :
       filepaths.append(entry.name)
   for i in range(len(filepaths)): #check that its in order
     for u in filepaths:
@@ -58,12 +58,16 @@ def myImgpaths(): #done
 #on startup
   #save the old ratings in case a revert is needed
 def onStartup():
-    shutil.copy("rating.p", "ratingcp.p")
-    reviews = []
-    pickle.dump(reviews, open("rating.p", "wb"))
-    shutil.copy("averagescore.p", "averagescorecp.p")
-    overallrating = [0, 0]
-    pickle.dump(overallrating, open("averagescore.p", "wb"))
+  shutil.copy("rating.p", "ratingcp.p")
+  reviews = []
+  pickle.dump(reviews, open("rating.p", "wb"))
+  shutil.copy("averagescore.p", "averagescorecp.p")
+  overallrating = [0, 0]
+  pickle.dump(overallrating, open("averagescore.p", "wb"))
+  #remove all img files
+  for entry in os.scandir(app.config['UPLOAD_FOLDER']):
+      if entry.is_file() and not entry.name.startswith("."):
+        os.remove(os.path.join(app.config['UPLOAD_FOLDER'], entry.name))
 
 onStartup()
 ##
@@ -91,9 +95,10 @@ def getReviews(): #returns most recent 10 reviews(list) , average score
 def next_filename(): #returns in the next slot 1-10 // if all filled then it renames all files to filename+1 and returns 1
   numboffiles = 0
   for entry in os.scandir(app.config['UPLOAD_FOLDER']):
-      if entry.is_file() :
+      if entry.is_file() and not entry.name.startswith(".") :
          print(entry.name)
          numboffiles += 1
+         print(numboffiles)
   moveover = (numboffiles >= 10)
 
   print("shift-over") #start shift-over code
@@ -101,7 +106,7 @@ def next_filename(): #returns in the next slot 1-10 // if all filled then it ren
   for i in range(numboffiles): #order the directory// extremely bad sort im sorry mr brooks, ill improve it in a future update
   #print(str(i + 1))
     for entry in os.scandir(app.config['UPLOAD_FOLDER']):
-      if entry.name.rsplit(".", 1)[0] == str(i + 1):
+      if not entry.name.startswith(".") and entry.name.rsplit(".", 1)[0] == str(i + 1):
           # start at file 10
           #print(entry.name.rsplit(".", 1)[0])
         extension = entry.name.rsplit(".", 1)[1] #problem
@@ -111,27 +116,27 @@ def next_filename(): #returns in the next slot 1-10 // if all filled then it ren
             #print(myFiles)
 
     #remove 10
-    if moveover:
-        print('path for 10: ', (os.path.join(app.config['UPLOAD_FOLDER'], myFiles[len(myFiles) - 1].name)))
-        os.remove(os.path.join(app.config['UPLOAD_FOLDER'], myFiles[len(myFiles) - 1].name)) #get rid of 10
-        myFiles.pop(len(myFiles) - 1)
-        print("myfiles with deleted 10")
-        print(myFiles)
+  if moveover:
+      print('path for 10: ', (os.path.join(app.config['UPLOAD_FOLDER'], myFiles[len(myFiles) - 1].name)))
+      os.remove(os.path.join(app.config['UPLOAD_FOLDER'], myFiles[len(myFiles) - 1].name)) #get rid of 10
+      myFiles.pop(len(myFiles) - 1)
+      print("myfiles with deleted 10")
+      print(myFiles)
 
     #overwrites from 10-1 , 10 del, 9 renamed to 10... etc
-    myFiles.reverse()
-    print(myFiles)
+  myFiles.reverse()
+  print(myFiles)
 
-    countdown = len(myFiles) + 1 #9 -> 10
+  countdown = len(myFiles) + 1 #9 -> 10
 
-    for i in myFiles: ###
-      start = os.path.join(app.config['UPLOAD_FOLDER'], i.name)##get exentsion
-      end = os.path.join(app.config['UPLOAD_FOLDER'],str(countdown) + "." + i.name.rsplit(".", 1)[1])
-      countdown = countdown - 1
-      print("moving")
-      print("start: " + str(start))
-      print("end: " + str(end))
-      os.rename(start , end) #move 9-> 10
+  for i in myFiles: ###
+    start = os.path.join(app.config['UPLOAD_FOLDER'], i.name)##get exentsion
+    end = os.path.join(app.config['UPLOAD_FOLDER'],str(countdown) + "." + i.name.rsplit(".", 1)[1])
+    countdown = countdown - 1
+    print("moving")
+    print("start: " + str(start))
+    print("end: " + str(end))
+    os.rename(start , end) #move 9-> 10
 
   return("1")
   # else:

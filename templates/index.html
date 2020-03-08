@@ -20,11 +20,13 @@
 
 
     <div id='main-image'>
-      {% if walkthrough == myTrue %}
+      {% if walkthrough == 1 %}
         {% include 'walkthrough.html' %}
       {% endif %}
 
-      <a {% if walkthrough != myTrue %} href="#jumpmain" {% endif %}>
+      <a {% if walkthrough == 0 %} href="#jumpmain" 
+      
+      {% endif %}>
 
       <img src="{{ url_for('static', filename='imgs/arrow.png') }}" id="bouncing_arrow"/>
       </a>
