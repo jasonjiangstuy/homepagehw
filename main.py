@@ -21,8 +21,10 @@ app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 #max upload of 20 MB, soft stop, > 
 def home():
   if request.args.get('walkthrough') == 'True':
     print('starting walkthrough')
+    sequence = request.args.get('sequence')
+    print(sequence)
     return render_template(
-    'index.html', walkthrough=1
+    'index.html', walkthrough=1, sequence=int(sequence)
     )
   return render_template(
     'index.html', walkthrough=0

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -15,27 +15,36 @@
     <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic4.png') }}">
     <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic5.png') }}">
 
-    <script async src="{{ url_for('static', filename='js/index.js') }}"></script>
+    {% if sequence == 1 %}
+    <script defer src="{{ url_for('static', filename='js/walkthrough.js') }}">
+    </script>
+    {% endif %}
 
-
+    {% if sequence == 2 %}
+    <script defer src="{{ url_for('static', filename='js/walkthrough2.js') }}">
+    </script>
+    {% endif %}
 
     <div id='main-image'>
       {% if walkthrough == 1 %}
         {% include 'walkthrough.html' %}
       {% endif %}
 
-      <a {% if walkthrough == 0 %} href="#jumpmain" 
-      
-      {% endif %}>
+      {% if walkthrough == 0 %}
+      <script async src="{{ url_for('static', filename='js/index.js') }}"></script>
+      <a href="#jumpmain">
 
+      {% endif %}
       <img src="{{ url_for('static', filename='imgs/arrow.png') }}" id="bouncing_arrow"/>
+      {% if walkthrough == 0 %}
       </a>
+      {% endif %}
     </div>
     {% include 'navbar.html' %}
 
 
     <div id="maindiv">
-      <p>* note pop-<u></u>p windows blocker must be disabled for the best experience *</p>
+      <p>* note pop-up windows blocker must be disabled for the best experience *</p>
       <h1>Who am I?</h1>
       <p> My name is Jason Jiang, Highschool Sophmore at Stuyvesant Highschool </p>
       <p>A stressed overworked being, Its nice to meet you!!!</p>

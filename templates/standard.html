@@ -37,8 +37,9 @@
         <div id="element-description">
           <p> {{item[1]|safe}} </p>
         </div>
+        {% if item[2] %}
         <img id="element-img" src="{{item[2]}}"/>
-
+        {% endif %}
         {% endfor %}
     </div>
   </body>

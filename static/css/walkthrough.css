@@ -1,10 +1,26 @@
 #display-screen{
+  margin-top: 15vh;
+  background-color: inherit;
+  opacity: inherit;
+  width: auto;
+  height: auto;
+  position: absolute;
+  text-align: inherit;
+  color: inherit;
+  font-size: inherit;
+  font-style: inherit;
+}
+
+#background-screen{
   background-color: black;
   opacity: .85;
   width: inherit;
   height: inherit;
   position: absolute;
-
+  text-align: center;
+  color: white;
+  font-size: 3vw;
+  font-style: oblique;
 }
 html{
   overflow-y: hidden;

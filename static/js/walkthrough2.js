@@ -1,6 +1,6 @@
 window.onload = run
 function run(){
-const indextext1 = 'Welcome to my walkthrough, sit back, relax and enjoy the experience. If you wish to be on your own, click anywhere on the screen to be free!! In this walkthrough I will be walking though the experiences and people who made me the person that I am today!!' ;
+const indextext1 = 'On a second note, I do not have time to build that whole walkthrough, I\'m sorry but ur on your own, Peace!!!(mic drop)' ;
 
 
 var pointer = 0;
@@ -13,7 +13,7 @@ writescript(indextext1, function() {
   // writescript(indextext2, function() {
   //   writescript(indextext3, function() {
   //     writescript(indextext4, function() {
-          //     });
+  //     });
   //   });
   // });
 });
@@ -50,16 +50,14 @@ function index(text, callback) {
     myWalk.innerText = holdstring;
   }
   else {
-    console.log("end");
-    console.log(holdstring);
+    console.log("ending walkthrough...");
     clearInterval(texttimer)
-    console.log("act one done");
+    console.log("returning to current page...")
     const currentUrl = document.URL
-    const baseUrl = currentUrl.split('&');
+    const baseUrl = currentUrl.split('/?');
     console.log(baseUrl[0]);
-    window.location.href = baseUrl[0] + "&" + "sequence=2#";
+    window.location.href = baseUrl[0];
 
-    callback()
   }
 }
 

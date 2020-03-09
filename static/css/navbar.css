@@ -11,6 +11,7 @@
 @keyframes slide{
 
 }
+
 .menuitems.menuon{ /* turns the nav bar on// when the ham is pressed*/
   position: absolute;
   z-index: 1;

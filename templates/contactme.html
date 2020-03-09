@@ -50,20 +50,31 @@
             <p> Average Rating: {{averagescore}} </p>
           </div>
 
+<table>
         {% for item in u %}
+        <tr>
+          <td>
           <div id="reviewer-name">
             <p> {{item[0]|safe}} </p>
           </div>
+        </td>
+        <td>
           <div id="reviewer-description">
             <p> {{item[1]|safe}} </p>
           </div>
+        </td>
+        <td>
           <div id="reviewer-rating">
             <p> {{item[2]|safe}} </p>
           </div>
+        </td>
+      <td>
           <img id="reviewer-img" src="{{item[3]}}"/>
-
+        </td>
+</tr>
         {% endfor %}
         </div>
+      </table>
 
 
 
