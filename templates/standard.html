@@ -19,9 +19,9 @@
       <div id="page-description">
         <p>{{ i[1]|safe }}</p>
       </div>
-      {% if submit %}
+      {% if submit == True %}
       <h3> Review Submitted </h3>
-      {% else %}
+      {% elif submit == False %}
       <h3> Please Fill in the Required Forms </h3>
       {% endif %}
 
@@ -30,17 +30,29 @@
       {% endif %}
 
       <!-- elements on the page -->
+      <table id="maintable">
         {% for item in i[2] %}
+        <tr>
+          <td class="special">
         <div id="element-heading">
           <p> {{item[0]|safe}} </p>
         </div>
+          </td>
+          <td class="special" {% if not item[2] %} colspan="2" {% endif %}>
         <div id="element-description">
           <p> {{item[1]|safe}} </p>
         </div>
+          </td>
+          
+          <td class="special"> 
         {% if item[2] %}
         <img id="element-img" src="{{item[2]}}"/>
         {% endif %}
+          </td>
+          
+          </tr>
         {% endfor %}
+      </table>
     </div>
   </body>
 

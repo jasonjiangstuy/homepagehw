@@ -33,7 +33,13 @@ def home():
 @app.route('/myteam', methods=['GET'])
 def team():
   return render_template(
-    'teampage.html'
+    'standard.html', i=details.myTeam
+  )
+
+@app.route('/fencing', methods=['GET'])
+def fencing():
+  return render_template(
+    'standard.html', i=details.fencing
   )
 
 ##check if the file type is one of the allowed, if none type it returns false

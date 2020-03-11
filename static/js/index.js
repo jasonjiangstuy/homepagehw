@@ -11,7 +11,7 @@ window.onload = function onload(){
     //bind buttons
     var timer = setInterval(switchmyImg, 6000);
     function switchmyImg(){
-      if (currentimageid < 5){
+      if (currentimageid < 7){
       currentimageid = currentimageid + 1;
       imgUrl = baseUrl.concat(currentimageid, ".png')");
       elem.setAttribute("style", imgUrl);

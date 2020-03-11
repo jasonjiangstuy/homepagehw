@@ -8,6 +8,7 @@ var holdstring;
 var myWalk = document.querySelector('#display-screen');
 var texttimer
 firststory()
+
 function firststory(){
 writescript(indextext1, function() {
   // writescript(indextext2, function() {
@@ -62,7 +63,7 @@ function index(text, callback) {
     callback()
   }
 }
-
+}
 function endwalkthrough(){
   console.log("ending walkthrough...");
   clearInterval(texttimer)
@@ -74,5 +75,4 @@ function endwalkthrough(){
 
   //learning js using dev docs + stack over flow to find the functions i need
   //also a lot of googling to understand jargen
-}
 }

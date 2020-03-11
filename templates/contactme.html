@@ -51,18 +51,27 @@
           </div>
 
 <table>
+  <thead>
+  <tr>
+  <th>Name:</th>
+  <th>Rating:</th>
+  <th colspan="2">Description:</th>
+  <thead>
+    <tbody class="s2pecial">
         {% for item in u %}
         <tr>
+          
           <td>
-          <div id="reviewer-name">
-            <p> {{item[0]|safe}} </p>
-          </div>
-        </td>
-        <td>
-          <div id="reviewer-description">
-            <p> {{item[1]|safe}} </p>
-          </div>
-        </td>
+            <div id="reviewer-name">
+              <p> {{item[0]|safe}} </p>
+            </div>
+          </td>
+          <td>
+            <div id="reviewer-description">
+              <p> {{item[1]|safe}} </p>
+            </div>
+            </td>
+            
         <td>
           <div id="reviewer-rating">
             <p> {{item[2]|safe}} </p>
@@ -73,7 +82,7 @@
         </td>
 </tr>
         {% endfor %}
-        </div>
+    </tbody>        
       </table>
 
 

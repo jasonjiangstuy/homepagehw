@@ -66,3 +66,8 @@
 html{
   scroll-behavior: smooth;
 }
+
+a {
+  color: inherit;
+  text-decoration-line:none;
+}

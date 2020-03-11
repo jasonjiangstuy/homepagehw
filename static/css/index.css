@@ -42,3 +42,25 @@ html, body{
   color:black;
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+#myTable{
+  text-align:center;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 100%;
+  height: auto;
+  float: right;
+  position:relative;
+  empty-cells:show;
+
+}
+
+
+.maincells{
+  text-align: left;
+  width: 50%;
+}
+#myImg{
+  width:50vh;
+  height:auto;
+}

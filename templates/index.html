@@ -14,7 +14,8 @@
     <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic3.png') }}">
     <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic4.png') }}">
     <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic5.png') }}">
-
+    <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic6.png') }}">
+    <link async rel="preload" as="image" href="{{ url_for('static', filename='imgs/slideshow/teampic7.png') }}">
     {% if sequence == 1 %}
     <script defer src="{{ url_for('static', filename='js/walkthrough.js') }}">
     </script>
@@ -49,12 +50,23 @@
       <p> My name is Jason Jiang, Highschool Sophmore at Stuyvesant Highschool </p>
       <p>A stressed overworked being, Its nice to meet you!!!</p>
       <h3>Some quick facts</h3>
+      <table id="myTable">
+        <tr>
+
+          <td id="maincells">
       <ul>
         <li> My favorite food is ice cream </li>
-        <li> I love to dance, but can't dance (for those that saw me during hip hop auditions im sorry) </li>
+        <li> I love to dance, but can't dance </li>
         <li> I am a freak at a buffet, I WILL get my money's worth. A humble food vacuum at your service. </li>
         <li> I am a enviormental activist and current fencing team captain </li>
+        <li> Also posted a pic that I used for my food project just because I can :))) -> </li>
       </ul>
+          </td>
+          <td id="maincells">
+            <img id="myImg" src="{{ url_for('static', filename='imgs/loverice.jpg') }}" >
+          </td>
+          </tr>
+      </table>
       <h3>Now come take a look around my website and learn more about who I am</h3>
       <br/>
       <h2>However... if you would prefer, I'll walk you through it :)))</h2>

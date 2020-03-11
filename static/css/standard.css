@@ -1,0 +1,38 @@
+table{
+  empty-cells:show;
+  border-collapse:separate;
+  vertical-align: baseline;
+}
+.special{
+  text-align:center;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: .5vw;
+  border-radius: 1vw;
+  width: auto;
+  height: auto;
+  background: linear-gradient(#e66465, #9198e5);
+  color:aliceblue;
+}
+
+.s2pecial{
+  text-align:center;
+  margin-left: 20%;
+  margin-right: 20%;
+  border: .5vw;
+  border-radius: 1vw;
+  width: auto;
+  height: auto;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
+#element-img{
+  width:35vh;
+  height:auto;
+}
+#maintable{
+  width: 100%
+}
+thead{
+  background-color: #333;
+  color: #fff;
+}
