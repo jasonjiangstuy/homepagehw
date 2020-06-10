@@ -259,9 +259,15 @@ def add_header(r):
     return r
 
 if __name__ == '__main__':
-    #app.run(host='0.0.0.0', port='3000', debug=True) #do NOT use in production
-    app.run(host='0.0.0.0', port='3000')
+    app.run(host='0.0.0.0', port=8000, debug=False)
 
+from threading import Thread
+
+def keep_alive():
+   t = Thread(target=run)
+   t.start()
+
+keep_alive()
 #useful modules
 #picking -> method of database storage: can preserve classes
 #www.MYURL/showcase.com#isFake?=True
